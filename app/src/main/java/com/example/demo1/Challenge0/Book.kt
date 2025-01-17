@@ -8,18 +8,4 @@ class Book(
     override fun toString(): String {
         return "Book: $title , Author: $author"
     }
-
-    fun borrowBook( book : Book ) : Any {
-        return if (book.isAvailable) {
-            book.isAvailable = false
-            println("You have successfully borrowed $title by $author")
-            return true
-        }
-        else{
-            println("Sorry, $title by $author is currently unavailable.")
-            return false
-        }
-    }
-
-
 }

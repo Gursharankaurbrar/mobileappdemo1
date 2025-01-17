@@ -18,8 +18,21 @@ class Library(
         }
     }
 
+    fun borrowBook( title: String ) : Boolean {
+        val requiredBook = booksList.find { it.title == title }
+        return if ( requiredBook != null && requiredBook.isAvailable) {
+            requiredBook.isAvailable = false
+            println("You have successfully borrowed $title")
+            return true
+        }
+        else{
+            println("Sorry, $title  is currently unavailable.")
+            return false
+        }
+    }
+
     fun getAvailableBooksCountByAuthor( author: String) : Int {
-        val bookCount = booksList.count{ it.author == author }
+        val bookCount = booksList.count{ it.author == author && it.isAvailable  }
         return bookCount
     }
 }
