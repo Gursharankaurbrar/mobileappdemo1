@@ -17,4 +17,9 @@ class Library(
             println(book)
         }
     }
+
+    fun getAvailableBooksCountByAuthor( author: String) : Int {
+        val bookCount = booksList.count{ it.author == author }
+        return bookCount
+    }
 }
