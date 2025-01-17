@@ -10,11 +10,4 @@ fun main(){
     val bird = Bird("Sparrow", "Chirp")
     bird.makeSound()
     bird.fly()
-
-
-
-
-
-
-
 }
