@@ -5,7 +5,7 @@ class Library(
 ) {
     fun addBook(book: Book){
         booksList.add(book)
-        println("Book added to the list.")
+        println("$book added to the list.")
     }
 
     fun removeBook(title: String){
@@ -13,8 +13,13 @@ class Library(
     }
 
     fun displayAvailableBooks(){
+
         for(book in booksList){
-            println(book)
+            if(book.isAvailable == true){
+            println(book)}
+            else{
+                println("$book currently not available")
+            }
         }
     }
 
@@ -31,8 +36,8 @@ class Library(
         }
     }
 
-    fun getAvailableBooksCountByAuthor( author: String) : Int {
+    fun getAvailableBooksCountByAuthor( author: String) {
         val bookCount = booksList.count{ it.author == author && it.isAvailable  }
-        return bookCount
+        println(bookCount)
     }
 }
