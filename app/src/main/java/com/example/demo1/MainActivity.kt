@@ -34,8 +34,6 @@ class MainActivity : AppCompatActivity() {
 
             Toast.makeText(this, "Hello $str", Toast.LENGTH_LONG).show()
             Snackbar.make(findViewById(R.id.main), "Greetings: ${str}", Snackbar.LENGTH_LONG).show()
-
-
         }
     }
 }
